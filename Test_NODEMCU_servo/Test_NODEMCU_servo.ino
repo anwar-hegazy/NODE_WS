@@ -13,7 +13,7 @@
 #include <Servo.h>
 
 /* Set these to your desired credentials. */
-const char *ssid = "BQ8";
+const char *ssid = "NODE_WS";
 const char *password = "";
 
 ESP8266WebServer server(80);
