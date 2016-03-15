@@ -10,12 +10,12 @@
 
 #include <ESP8266WiFi.h>
 #include <ESP8266mDNS.h>
-//#include <WiFiClient.h>
+
 #include <ESP8266WebServer.h>
 
-// Wifi
-const char* ssid = "BQ_CORP";
-const char* password = "%&Th3_M4Tr1X1234!=";
+// Wifi name & password
+const char* ssid = ".........";
+const char* password = "..........";
 
 const char* webLocalDir = "http://172.16.34.155"; //(dirección concreta para esta plaquita NodeMCU)
 
@@ -82,20 +82,20 @@ void handleRoot() {
     //  En este caso es accesible desde: http://172.16.34.155
     String htmlCode = "";
 
-    htmlCode += "<!DOCTYPE html>";
+    htmlCode += "<!DOCTYPE html>\n";
     htmlCode += "<html style=\"background-image: url(http://i.stack.imgur.com/7YKUD.jpg); background-repeat: repeat;\">\n";
-    htmlCode += "<head><title>Hacker!</title></head>";
-    htmlCode += "    <body> \n <br><br>";
-    htmlCode += "        <h1 style= \"text-align:center; color:#CEF6CE; font-family: monospace; font-size:200%;\" >Hello from Anita's NodeMCU! \n \n \n</h1>&nbsp;";
+    htmlCode += "<head><title>Hacker!</title></head>\n";
+    htmlCode += "    <body> \n <br><br>\n";
+    htmlCode += "        <h1 style= \"text-align:center; color:#CEF6CE; font-family: monospace; font-size:200%;\" >Hello from Anita's NodeMCU!</h1>\n \n";
     htmlCode += "        <center><img src=\"http://fs01.androidpit.info/a/b7/60/zowi-app-b760e4-w240.png\" alt=\"Zowiwi\" ></center>\n"; //p:  style=\"text-align:center;\"
-    htmlCode += "        <p style= \"text-align:center; color:#CEF6CE; font-family: monospace;\"> <i>ESP8266 inside</i> </p><br>";
-    htmlCode += "        <h2 style= \"color:#CEF6CE; font-family: monospace;\" >Please Try:</h2>";
-    htmlCode += "        <a href=\"http://172.16.34.155/tolili\" style=\"margin-left: 30px; color:#00C3FF;\">http://172.16.34.155/tolili</a><br>";
-    htmlCode += "        <a href=\"http://172.16.34.155/boton\" style=\"margin-left: 30px; color:#00C3FF;\">http://172.16.34.155/boton </a><br>";
-    htmlCode += "        <a href=\"https://c1.staticflickr.com/1/5/5040260_a2c426a753.jpg\" style=\"margin-left: 30px; color:#FFE100;\"><b>Banana</b></a><br>";
-    htmlCode += "        <br><br><h4 style= \"color:#CEF6CE; font-family: monospace;\" >Gracias a Bea por su cargador ^^</h4>";
-    htmlCode += "    </body>";
-    htmlCode += " </html>";
+    htmlCode += "        <p style= \"text-align:center; color:#CEF6CE; font-family: monospace;\"> <i>ESP8266 inside</i> </p><br>\n";
+    htmlCode += "        <h2 style= \"color:#CEF6CE; font-family: monospace;\" >Please Try:</h2>\n";
+    htmlCode += "        <a href=\"http://172.16.34.155/tolili\" style=\"margin-left: 30px; color:#00C3FF;\">http://172.16.34.155/tolili</a><br>\n";
+    htmlCode += "        <a href=\"http://172.16.34.155/boton\" style=\"margin-left: 30px; color:#00C3FF;\">http://172.16.34.155/boton </a><br>\n";
+    htmlCode += "        <a href=\"https://c1.staticflickr.com/1/5/5040260_a2c426a753.jpg\" style=\"margin-left: 30px; color:#FFE100;\"><b>Banana</b></a><br>\n";
+    htmlCode += "        <br><br><h4 style= \"color:#CEF6CE; font-family: monospace;\" >Gracias a Bea por su cargador ^^</h4>\n";
+    htmlCode += "    </body>\n";
+    htmlCode += " </html>\n";
 
    server.send(200, "text/html", htmlCode); //indexHtmlCode
 
@@ -130,17 +130,17 @@ void botoncicosPag(){
   htmlCode += "<!DOCTYPE html>\n";
   htmlCode += "<html style=\"background-image: url(http://i.stack.imgur.com/7YKUD.jpg); background-repeat: repeat;\">\n";  //OTRA CHACHI: https://s-media-cache-ak0.pinimg.com/736x/e7/d3/66/e7d36669c822b2e4bae251b77e0660ce.jpg
   htmlCode += "<head><title>Hacker Control!</title></head>\n";
-  htmlCode += "    <body>\n <br><br>";
+  htmlCode += "    <body>\n <br><br>\n";
   htmlCode += "        <h1 style= \"text-align:center; color:#CEF6CE; font-family: monospace; font-size:200%;\" ><b>Botoncicos!</b></h1>\n";  // align='center'
   htmlCode += "        <p style=\"align:center; text-align:center; \">\n"; //margin-left: 20px
-  htmlCode += "                <a href=\"?pin=ON\" style=\"align:center;\"><img src=\"http://bit.ly/1QR2UiB\" alt=\"botonON\"></a>&nbsp;";   //Otro: http://bit.ly/1nC7BUY
-  htmlCode += "                <a href=\"?pin=OFF\" style=\"align:center;\"><img src=\"http://bit.ly/1P3oHRN\" alt=\"botonOFF\"></a>&nbsp;";
+  htmlCode += "                <a href=\"?pin=ON\" style=\"align:center;\"><img src=\"http://bit.ly/1QR2UiB\" alt=\"botonON\"></a>\n";   //Otro: http://bit.ly/1nC7BUY
+  htmlCode += "                <a href=\"?pin=OFF\" style=\"align:center;\"><img src=\"http://bit.ly/1P3oHRN\" alt=\"botonOFF\"></a>\n";
   //htmlCode += "                <button onClick=location.href='?pin=ON\' style='margin:auto;background-color: #CEF6CE;color: black;padding: 20px;border: 2px solid #3F7CFF;width:85px;'> ON </button>\n";
   //htmlCode += "                <button onClick=location.href='?pin=OFF\' style='margin:auto;background-color: #F5A9A9;color: black;padding: 20px;border: 2px solid #3F7CFF;width:85px;'> OFF </button>\n";
   htmlCode += "        </p>\n";
   htmlCode += "        <p style= \"color:#CEF6CE;\" >  Segunda plaquita NodeCMU (cliente) recibe: ";
   htmlCode += buttonState;
-  htmlCode += "        </p>\n &nbsp;";
+  htmlCode += "        </p>\n";
   htmlCode += "    </body>\n";
   htmlCode += "</html>";
 
