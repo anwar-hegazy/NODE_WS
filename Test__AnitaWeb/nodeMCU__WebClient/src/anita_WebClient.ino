@@ -14,9 +14,10 @@
 
 #define USE_SERIAL Serial
 
-// Wifi
-const char* ssid = "BQ_CORP";
-const char* password = "%&Th3_M4Tr1X1234!=";
+
+// Wifi name & password
+const char* ssid = ".........";
+const char* password = "..........";
 
 const char* webDir = "http://172.16.34.155/paracliente"; //Dirección creada sólo para cliente y no tener que utilizar métodos GET
 
