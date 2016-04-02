@@ -1,7 +1,7 @@
 <table>
 <tr>
 <td>
-<img src="images/bq-logo-human-right-technology.png" width="400" align="center">
+
 </td>
 </tr>
 </table>
@@ -30,7 +30,9 @@ board and app to move robots with NodeMCU via WiFi
 ## Credits
  
 
-Designed by Gianluca Pugliese [Owensource](https://www.owensource.com) for [BQ](https://www.bq.com)
+Designed by Gianluca Pugliese [Owensource](https://www.owensource.com) 
+
+Sponsored by BQ untill March 2016
 
 
 
